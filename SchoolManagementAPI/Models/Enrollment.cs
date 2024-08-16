@@ -3,6 +3,8 @@ namespace SchoolManagementAPI.Models
 {
     public class Enrollment
     {
+        public int EnrollmentId { get; set; }
+
         public int StudentId { get; set; } // Foreign key to student model 
         public Student? Student { get; set; } // Navigation property 
 
