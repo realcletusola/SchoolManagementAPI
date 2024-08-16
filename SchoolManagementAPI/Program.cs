@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolManagementAPI.Data;
 
 namespace SchoolManagementAPI
 {
@@ -8,6 +10,8 @@ namespace SchoolManagementAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<SchoolManagementContext>(options =>
+                options.UseInMemoryDatabase("SchoolManagementDb"));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
